@@ -3,7 +3,7 @@ services:
     - docker
 
 before_install:
-    - docker build -t krishnachalla/react-test -f ./client/Dockerfile ./client
+    - docker build -t krishnachalla/react-test -f ./client/Dockerfile.dev ./client
 
 script:
     - docker run -e CI=true krishnachalla/react-test npm run test -- --coverage
